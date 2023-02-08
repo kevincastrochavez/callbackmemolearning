@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import "./App.css";
 import List from "./List";
 
@@ -6,9 +6,18 @@ function App() {
   const [number, setNumber] = useState(1);
   const [dark, setDark] = useState(false);
 
-  const getItems = () => {
+  // useCallback is a hook that allows to use a function as a callback. It returns the function that was passed in.
+  // useMemo is a hook that allows to use a function as a cache. It stores the result of the function in the cache.
+
+  // WITHOUT USING THE HOOK
+  // const getItems = () => {
+  //   return [number, number + 1, number + 2];
+  // };
+
+  // USING THE HOOK
+  const getItems = useCallback(() => {
     return [number, number + 1, number + 2];
-  };
+  }, [number]);
 
   const theme = {
     backgroundColor: dark ? "#333" : "#fff",
