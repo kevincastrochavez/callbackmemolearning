@@ -9,15 +9,15 @@ function Callback() {
   // useMemo is a hook that allows to use a function as a cache. It stores the result of the function in the cache.
 
   // WITHOUT USING THE HOOK
-  // const getItems = () => {
-  //   return [number, number + 1, number + 2];
-  // };
+  const getItems = () => {
+    return [number, number + 1, number + 2];
+  };
 
   // USING THE HOOK
   // Use it when you want to perform expensive operations
-  const getItems = useCallback(() => {
-    return [number, number + 1, number + 2];
-  }, [number]);
+  //   const getItems = useCallback(() => {
+  //     return [number, number + 1, number + 2];
+  //   }, [number]);
 
   const theme = {
     backgroundColor: dark ? "#333" : "#fff",

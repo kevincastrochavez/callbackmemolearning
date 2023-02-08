@@ -5,13 +5,13 @@ function Memo() {
   const [dark, setDark] = useState(false);
 
   //  without using useMemo
-  //  const doubleNumber = slowFunction(number);
+  const doubleNumber = slowFunction(number);
 
   //  using useMemo for expensive computation or referential equality
   //  Every time state changes, we need to re-render the component. When it gets to this point, it will run the function if the value is exactly the same as last time.
-  const doubleNumber = useMemo(() => {
-    return slowFunction(number);
-  }, [number]);
+  //   const doubleNumber = useMemo(() => {
+  //     return slowFunction(number);
+  //   }, [number]);
 
   const theme = {
     backgroundColor: dark ? "#333" : "#fff",
